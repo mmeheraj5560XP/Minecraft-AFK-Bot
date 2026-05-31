@@ -49,7 +49,10 @@ function movementCycle() {
     case 3:
       bot.setControlState('forward', false);
       bot.setControlState('back', false);
-      bot.setControlState('jump', false);
+      bot.setControlState('jump', true);
+      setTimeout(() => {
+        bot.setControlState('jump', false);
+      }, JUMP_DURATION);
       break;
   }
 
